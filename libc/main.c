@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 09:58:25 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/03 16:45:52 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/04 20:22:18 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,58 @@ int		main()
 	char	src_strcpy[155] = "Sandra";
 	printf("my strcpy: %s\n", ft_strcpy(dst_ft_strcpy, src_ft_strcpy));
 	printf("real strcpy: %s\n", strcpy(dst_strcpy, src_strcpy));
+	write(1, "\n", 1);
+	char	dst_ft_strncpy[100] = "Je suis la destination"; //len 22
+	char	src_ft_strncpt[100] = "I am the source"; //len 15
+	char	dst_strncpy[100] = "Je suis la destination";
+	char	src_strncpt[100] = "I am the source";
+	printf("my strncpy: %s\n", ft_strncpy(dst_ft_strncpy, src_ft_strncpt, 5));
+	printf("real strncpy: %s\n", strncpy(dst_strncpy, src_strncpt, 5));
+	write(1, "\n", 1);
+	char	s1_ft_strcat[100] = "Salut, moi c'est: ";
+	char	s2_ft_strcat[100] = "Sandra";
+	char	s1_strcat[100] = "Salut, moi c'est: ";
+	char	s2_strcat[100] = "Sandra";
+	printf("my strcat: %s\n", ft_strcat(s1_ft_strcat, s2_ft_strcat));
+	printf("real strcat: %s\n", strcat(s1_strcat, s2_strcat));
+	write(1, "\n", 1);
+	char	s1_ft_strncat[100] = "Je m'appelle ";
+	char	s2_ft_strncat[100] = "Sandra Gury";
+	char	s1_strncat[100] = "Je m'appelle ";
+	char	s2_strncat[100] = "Sandra Gury";
+	printf("my strncat: %s\n", ft_strncat(s1_ft_strncat, s2_ft_strncat, 22));
+	printf("real strncat: %s\n", strncat(s1_strncat, s2_strncat, 22));
+	write(1, "\n", 1);
+	char	dst_ft_strlcat[100] = "Je m'appelle ";
+	char	src_ft_strlcat[100] = "Sandra";
+	char	dst_strlcat[100] = "Je m'appelle ";
+	char	src_strlcat[100] = "Sandra";
+	printf("my strlcat: %zu\n", ft_strlcat(dst_ft_strlcat, src_ft_strlcat, 25));
+	printf("real strlcat: %zu\n", strlcat(dst_strlcat, src_strlcat, 25));
+	write(1, "\n", 1);
+	char	str_ft_chr[100] = "La vie est belle !";
+	char	str_chr[100] = "La vie est belle !";
+	printf("my strchr: %s\n", ft_strchr(str_ft_chr, '&'));
+	printf("real strchr: %s\n", strchr(str_chr, '&'));
+	write(1, "\n", 1);
+	char	str_ft_rchr[100] = "La vie est belle !";
+	char	str_rchr[100] = "La vie est belle !";
+	printf("my strchr: %s\n", ft_strrchr(str_ft_rchr, ' '));
+	printf("real strchr: %s\n", strrchr(str_rchr, ' '));
+	write(1, "\n", 1);
+	char	ft_haystack[100] = "abcdefghdefjklmn";
+	char	ft_needle[100] = "defj";
+	char	haystack[100] = "abcdefghdefjklmn";
+	char	needle[100] = "defj";
+	printf("my strstr: %s\n", ft_strstr(ft_haystack, ft_needle));
+	printf("real strstr: %s\n", strstr(haystack, needle));
+	write(1, "\n", 1);
+	char	ft_strn_haystack[100] = "abcdefghdefjklmn";
+	char	ft_strn_needle[100] = "defj";
+	char	strn_haystack[100] = "abcdefghdefjklmn";
+	char	strn_needle[100] = "defj";
+	printf("my strnstr: %s\n", ft_strnstr(ft_strn_haystack, ft_strn_needle, 12));
+	printf("real strnstr: %s\n", strnstr(strn_haystack, strn_needle, 12));
+	write(1, "\n", 1);
 	return (0);
 }
