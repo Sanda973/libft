@@ -1,37 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 13:22:43 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/03 14:00:28 by sgury            ###   ########.fr       */
+/*   Created: 2019/04/05 08:38:59 by sgury             #+#    #+#             */
+/*   Updated: 2019/04/05 16:54:28 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	*un_s;
-	unsigned char	un_c;
 	size_t			i;
-	size_t			j;
+	unsigned char	*un_s1;
+	unsigned char	*un_s2;
 
 	i = 0;
-	j = 0;
-	un_s = (unsigned char *)s;
-	un_c = (unsigned char)c;
-	while (i < n)
-	{
-		if (un_s[i] == un_c)
-		{
-			while (un_s[i] != '\0')
-				un_s[j++] = un_s[i++];
-			return (un_s);
-		}
+	un_s1 = (unsigned char *)s1;
+	un_s2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
+	while (un_s1[i] == un_s2[i] && un_s1[i] != '\0'
+			&& un_s2[i] != '\0' && i < n - 1)
 		i++;
-	}
-	return (0);
+	return (un_s1[i] - un_s2[i]);
 }

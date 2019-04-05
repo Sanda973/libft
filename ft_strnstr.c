@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 10:15:46 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/04 16:52:15 by sgury            ###   ########.fr       */
+/*   Created: 2019/04/04 19:40:15 by sgury             #+#    #+#             */
+/*   Updated: 2019/04/05 16:28:39 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dst,
-		const void *src, int c, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	unsigned char	*un_dst;
-	unsigned char	*un_src;
-	unsigned char	un_c;
-	size_t			i;
-	size_t			j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	un_dst = (unsigned char *)dst;
-	un_src = (unsigned char *)src;
-	un_c = (unsigned char)c;
-	while (i < n)
+	if (*needle == '\0')
+		return ((char *)haystack);
+	while (haystack[i] != '\0' && i < len)
 	{
-		if (un_src[i] == un_c)
+		if (haystack[i] == needle[0])
 		{
-			i++;
-			while (un_dst[j] != '\0')
-				un_dst[j++] = un_dst[i++];
-			return (un_dst);
+			while (haystack[j + i] == needle[j] && j + i < len)
+			{
+				j++;
+				if (needle[j] == '\0')
+					return ((char *)haystack + i);
+			}
+			j = 0;
 		}
-		un_dst[i] = un_src[i];
 		i++;
 	}
 	return (0);

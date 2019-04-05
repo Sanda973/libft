@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/04 14:16:53 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/04 14:45:13 by sgury            ###   ########.fr       */
+/*   Created: 2019/04/05 08:22:46 by sgury             #+#    #+#             */
+/*   Updated: 2019/04/05 16:43:13 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	unsigned char	chr;
-	char			*occ;
-	size_t			i;
-	size_t			j;
+	unsigned char	*un_s1;
+	unsigned char	*un_s2;
 
-	chr = (unsigned char)c;
-	occ = (char *)s;
-	i = ft_strlen(s) + 1;
-	j = 0;
-	while (s[i] != chr && i > 0)
-		i--;
-	if (s[i] != chr)
-		return (0);
-	while (s[i] != '\0')
-		occ[j++] = s[i++];
-	occ[j] = '\0';
-	return (occ);
+	un_s1 = (unsigned char *)s1;
+	un_s2 = (unsigned char *)s2;
+	while (*un_s1 == *un_s2 && *un_s1 != '\0' && *un_s2 != '\0')
+	{
+		un_s1++;
+		un_s2++;
+	}
+	return (*un_s1 - *un_s2);
 }

@@ -14,10 +14,6 @@ int		main()
 	char	src[155] = "tralala";
 	char	dst2[155] = "Je test le memcpy";
 	char	src2[155] = "tralala";
-	char    dst3[155] = "Je test le memccpy";
-	char    src3[155] = "tralala";
-	char    dst4[155] = "Je test le memccpy";
-	char    src4[155] = "tralala";
 
 	ft_bzero(str1, 2);
 	printf("my bzero: %s\n", str1);
@@ -45,8 +41,12 @@ int		main()
 	printf("my memcpy: %s\n", ft_memcpy(dst2, src2, 3));
 	write(1, "\n", 1);
 
-	printf("my memccpy: %s\n", ft_memccpy(dst4, src4, 't', 4));
-	printf("real memccpy: %s\n", memccpy(dst3, src3, 't', 4));
+	char    ft_dst_memccpy[155] = "Je test le memccpy";
+	char    ft_src_memccpy[155] = "tralala";
+	char    dst_memccpy[155] = "Je test le memccpy";
+	char    src_memccpy[155] = "tralala";
+	printf("my memccpy: %s\n", ft_memccpy(ft_dst_memccpy, ft_src_memccpy, 'l', 4));
+	printf("real memccpy: %s\n", memccpy(dst_memccpy, src_memccpy, 'l', 4));
 	write(1, "\n", 1);
 	char	dst5[155] = "test  memmove";
 	char	src5[155] = "salut moi c'est memmove!";
@@ -55,10 +55,10 @@ int		main()
 	printf("my memmove: %s\n", ft_memmove(dst5, src5, 5));
 	printf("real memmove: %s\n", memmove(dst6, src6, 5));
 	write(1, "\n", 1);
-	char	str7[155] = "La vie est belle!";
-	char	str8[155] = "La vie est belle!";
-	printf("my memchr: %s\n", ft_memchr(str7, 'i', 16));
-	printf("real memchr: %s\n", memchr(str8, 'i', 16));
+	char	ft_str_memchr[155] = "La vie est belle!";
+	char	str_memchr[155] = "La vie est belle!";
+	printf("my memchr: %s\n", ft_memchr(ft_str_memchr, 'b', 25));
+	printf("real memchr: %s\n", memchr(str_memchr, 'b', 25));
 	write(1, "\n", 1);
 	char	s1_memcmp[155] = "Salut les gens";
 	char	s2_memcmp[155] = "Salut Sandra !";
