@@ -1,16 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 09:58:25 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/04 20:22:18 by sgury            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "libft.h"
+#include <ctype.h>
 
 int		main()
 {
@@ -141,5 +131,43 @@ int		main()
 	printf("my strnstr: %s\n", ft_strnstr(ft_strn_haystack, ft_strn_needle, 12));
 	printf("real strnstr: %s\n", strnstr(strn_haystack, strn_needle, 12));
 	write(1, "\n", 1);
+	char	ft_s1_strcmp[100] = "Je suis different";
+	char	ft_s2_strcmp[100] = "Je suis vraiment different";
+	char	s1_strcmp[100] = "Je suis different";
+	char	s2_strcmp[100] = "Je suis vraiment different";
+	printf("my strcmp: %d\n", ft_strcmp(ft_s1_strcmp, ft_s2_strcmp));
+	printf("real strcmp: %d\n", strcmp(s1_strcmp, s2_strcmp));
+	write(1, "\n", 1);
+	char	ft_s1_strncmp[100] = "Je suis different";
+	char	ft_s2_strncmp[100] = "Je suis vraiment different";
+	char	s1_strncmp[100] = "Je suis different";
+	char	s2_strncmp[100] = "Je suis vraiment different";
+	printf("my strncmp: %d\n", ft_strncmp(ft_s1_strncmp, ft_s2_strncmp, 8));
+	printf("real strncmp: %d\n", strncmp(s1_strncmp, s2_strncmp, 8));
+	write(1, "\n", 1);
+	char	str_atoi[100] = " 	\n   +555";
+	printf("my atoi: %d\n", ft_atoi(str_atoi));
+	printf("real atoi: %d\n", atoi(str_atoi));
+	write(1, "\n", 1);
+	printf("my ft_isalpha: %d\n", ft_isalpha('Y'));
+	printf("real isalpha: %d\n", isalpha('Y'));
+	write(1, "\n", 1);
+	printf("my isdigit: %d\n", ft_isdigit('b'));
+	printf("real isdigit: %d\n", isdigit('b'));
+	write(1, "\n", 1);
+	printf("my isalnum: %d\n", ft_isalnum('n'));
+	printf("real isalnum: %d\n", isalnum('n'));
+	write(1, "\n", 1);
+	printf("my isascii: %d\n", ft_isascii('5'));
+	printf("real isascii: %d\n", isascii('5'));
+	write(1, "\n", 1);
+	printf("my isprint: %d\n", ft_isprint('\n'));
+	printf("real isprint: %d\n", isprint('\n'));
+	write(1, "\n", 1);
+	printf("my toupper: %d\n", ft_toupper('5'));
+	printf("real toupper: %d\n", toupper('5'));
+	write(1, "\n", 1);
+	printf("my tolower: %d\n", ft_tolower('G'));
+	printf("real tolower: %d\n", tolower('G'));
 	return (0);
 }
