@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 14:01:12 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/05 14:20:07 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/05 17:56:22 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	if (n <= 0)
 		return (0);
-	while (un_s1[i] == un_s2[i] && i < n - 1 && un_s1[i] && un_s2[i])
+	while (un_s1[i] == un_s2[i] && i < n - 1)
 		i++;
 	return (un_s1[i] - un_s2[i]);
 }
