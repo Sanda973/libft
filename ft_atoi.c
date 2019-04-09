@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 09:07:05 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/05 09:41:03 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/09 13:42:15 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int	nbr;
+	unsigned int	nbr;
 	int	neg;
 
 	nbr = 0;
@@ -29,6 +29,8 @@ int	ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		nbr = nbr * 10 + *str++ - '0';
+		if (neg == -1 && nbr > 2147483648)
+			return (0);
 	}
 	return (nbr * neg);
 }

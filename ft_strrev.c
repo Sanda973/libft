@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/07 14:53:55 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/08 15:30:50 by sgury            ###   ########.fr       */
+/*   Created: 2019/04/08 13:20:21 by sgury             #+#    #+#             */
+/*   Updated: 2019/04/08 13:56:28 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+char	*ft_strrev(char *str)
 {
-	if (s)
-		ft_bzero(s, ft_strlen(s));
+	int		i;
+	int 	j;
+	char	tmp;
+
+	i = 0;
+	j = ft_strlen(str) - 1;
+	while (i <= j)
+	{
+		tmp = str[i];
+		str[i] = str[j];
+		str[j] = tmp;
+		i++;
+		j--;
+	}
+	return (str);
 }

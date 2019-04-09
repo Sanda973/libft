@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/07 14:53:55 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/08 15:30:50 by sgury            ###   ########.fr       */
+/*   Created: 2019/04/08 18:10:19 by sgury             #+#    #+#             */
+/*   Updated: 2019/04/08 18:31:46 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strclr(char *s)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	if (s)
-		ft_bzero(s, ft_strlen(s));
+	while(*s)
+	{
+		write(fd, s, ft_strlen(s));
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 11:24:50 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/07 13:08:30 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/09 09:29:27 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,11 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	if (dst > src)
 	{
 		i = len;
-		while (i <= len && i > 0)
+		while (i > 0)
 		{
-			un_dst[i] = un_src[i];
+			un_dst[i - 1] = un_src[i - 1];
 			i--;
 		}
 	}
 	return (un_dst);
-}
-
-int		main()
-{
-	char    *src = "thi\xffs i\xfas \0a g\xde\xadood \0nyan\0cat\0 !\r\n";
-	int             size = 33;
-	char    dst1[0xF0];
-	char    dst2[0xF0];
-
-	printf("real memmove: %s\n", memmove(dst1, src, size));
-	printf("my memmove: %s\n", ft_memmove(dst2, src, size));
 }
