@@ -6,56 +6,61 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 11:46:09 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/08 17:52:13 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/09 18:39:35 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_int_len(int n)
+static int		ft_int_len(long n)
 {
-	int	i;
 	int	len;
 
-	i = 1;
 	len = 0;
-	if (n == 0 || n == 1)
+	if (n == 0)
 		return (1);
-	while (i < n)
+	while (n > 0)
 	{
-		i *= 10;
+		n /= 10;
 		len++;
 	}
 	return (len);
 }
 
-char	*ft_itoa(int n)
+static char		*ft_fill_str(char *str, int len, long nbr, int neg)
 {
-	char	*str;
-	int		i;
-	int		n_len;
-	int		neg;
+	int	i;
 
 	i = 0;
-	neg = 0;
-	if (n < 0)
+	while (i < len)
 	{
-		neg = 1;
-		n *= -1;
-	}
-	n_len = ft_int_len(n);
-	if ((str = ft_strnew(n_len + neg)) == NULL)
-		return (NULL);
-	if (n == -2147483648)
-		str = "-2147483648\0";
-	while (i < n_len)
-	{
-		str[i] = n % 10 + '0';
+		str[i] = nbr % 10 + '0';
 		i++;
-		n = n / 10;
+		nbr = nbr / 10;
 	}
 	if (neg)
 		str[i] = '-';
+	return (str);
+}
+
+char			*ft_itoa(int n)
+{
+	char	*str;
+	int		n_len;
+	int		neg;
+	long	nbr;
+
+	neg = 0;
+	nbr = (long)n;
+	if (nbr < 0)
+	{
+		neg = 1;
+		nbr *= -1;
+	}
+	n_len = ft_int_len(nbr);
+	if ((str = ft_strnew(n_len + neg)) == NULL)
+		return (NULL);
+	str = ft_fill_str(str, n_len, nbr, neg);
 	str = ft_strrev(str);
 	return (str);
 }

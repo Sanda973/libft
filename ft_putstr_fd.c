@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 18:10:19 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/08 18:31:46 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/09 18:05:53 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while(*s)
+	if (s)
 	{
-		write(fd, s, ft_strlen(s));
+		while (*s)
+		{
+			ft_putchar_fd(*s++, fd);
+		}
 	}
 }

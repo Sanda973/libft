@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/05 09:07:05 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/09 13:42:15 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/09 17:48:52 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_atoi(const char *str)
 {
 	unsigned int	nbr;
-	int	neg;
+	int				neg;
 
 	nbr = 0;
 	neg = 1;

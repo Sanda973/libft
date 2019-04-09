@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 11:24:50 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/09 09:29:27 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/09 18:05:23 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			un_dst[i] = un_src[i];
 			i++;
 		}
-		return (un_dst);
 	}
 	if (dst > src)
 	{
