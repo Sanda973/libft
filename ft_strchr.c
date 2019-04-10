@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 13:42:15 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/09 14:31:37 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/10 10:28:33 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned char	chr;
-	size_t			i;
+	int				i;
 
 	chr = (unsigned char)c;
 	i = 0;

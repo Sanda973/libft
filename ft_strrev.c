@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 13:20:21 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/09 18:08:26 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/10 08:51:42 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strrev(char *str)
 	int		j;
 	char	tmp;
 
+	if (str == NULL)
+		return (NULL);
 	i = 0;
 	j = ft_strlen(str) - 1;
 	while (i <= j)

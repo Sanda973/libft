@@ -6,15 +6,16 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/08 09:48:50 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/09 18:40:24 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/10 08:55:08 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-static	size_t	ft_word_count(char const *s, char c)
+static	int	ft_word_count(char const *s, char c)
 {
-	size_t	wrd_count;
+	int	wrd_count;
 
 	wrd_count = 0;
 	if (s == NULL)
@@ -31,9 +32,9 @@ static	size_t	ft_word_count(char const *s, char c)
 	return (wrd_count);
 }
 
-static size_t	ft_wrd_len(char const *s, size_t index, char c)
+static int	ft_wrd_len(char const *s, int index, char c)
 {
-	size_t	len;
+	int	len;
 
 	len = 0;
 	while (s[index] != c && s[index] != '\0')
@@ -44,13 +45,13 @@ static size_t	ft_wrd_len(char const *s, size_t index, char c)
 	return (len);
 }
 
-char			**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
-	size_t	i;
-	size_t	index;
-	size_t	wrd_count;
-	size_t	wrd_len;
+	int		i;
+	int		index;
+	int		wrd_count;
+	int		wrd_len;
 
 	i = 0;
 	index = 0;
