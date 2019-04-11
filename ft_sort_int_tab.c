@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/08 18:18:28 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/11 09:51:49 by sgury            ###   ########.fr       */
+/*   Created: 2019/04/11 15:00:57 by sgury             #+#    #+#             */
+/*   Updated: 2019/04/11 15:43:20 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+int		*ft_sort_int_tab(int *tab, int size)
 {
-	long	ln;
+	int	i;
+	int	tmp;
 
-	ln = (long)n;
-	if (ln < 0)
+	i = 1;
+	tmp = 0;
+	if (tab == NULL)
+		return (NULL);
+	while (i < size)
 	{
-		ft_putchar_fd('-', fd);
-		ln *= -1;
+		if (tab[i - 1] > tab[i])
+		{
+			tmp = tab[i - 1];
+			tab[i - 1] = tab[i];
+			tab[i] = tmp;
+			i = 0;
+		}
+		i++;
 	}
-	if (ln < 10)
-	{
-		ft_putchar_fd(ln + '0', fd);
-	}
-	if (ln > 9)
-	{
-		ft_putnbr_fd(ln / 10, fd);
-		ft_putchar_fd(ln % 10 + '0', fd);
-	}
+	return (tab);
 }

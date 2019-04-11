@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 15:48:15 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/10 14:34:03 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/11 15:34:05 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,12 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *new);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void				ft_put_wrd_tab(char **tab, char *separator);
+void				ft_put_int_tab(int *tab, int size, char *separator);
+char				**ft_sort_wrd_tab(char **tab);
+int					*ft_sort_int_tab(int *tab, int size);
 #endif

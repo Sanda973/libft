@@ -6,7 +6,7 @@
 #    By: sgury <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/05 11:27:10 by sgury             #+#    #+#              #
-#    Updated: 2019/04/10 14:20:21 by sgury            ###   ########.fr        #
+#    Updated: 2019/04/11 15:33:04 by sgury            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_memchr.c \
 	   ft_strmapi.c ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c \
 	   ft_strtrim.c ft_strsplit.c ft_putchar.c ft_putstr.c ft_itoa.c \
 	   ft_strrev.c ft_putendl.c ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c \
-	   ft_putendl_fd.c ft_putnbr_fd.c ft_memccpy.c ft_lstnew.c ft_lstdelone.c \
+	   ft_putendl_fd.c ft_putnbr_fd.c ft_memccpy.c ft_lstnew.c ft_lstdel.c \
+	   ft_lstdelone.c ft_lstadd.c ft_lstiter.c ft_lstmap.c ft_put_wrd_tab.c \
+	   ft_put_wrd_tab.c ft_sort_wrd_tab.c \
 
 
 OBJS = $(SRCS:.c=.o)
@@ -35,15 +37,19 @@ CC = gcc
 
 all: $(NAME)
 
-$(NAME):
-	$(CC) $(CFLAGS) -c $(SRCS) -I $(INCLUDES)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+$(NAME): $(OBJS)
+	@ar rcs $(NAME) $(OBJS)
+	@echo "compilation succeed"
+
+%.o: %.c
+	$(CC) $(CFLAGS) -o $@ -c $< -I $(INCLUDES)
 
 clean:
-	rm -rf $(OBJS)
+	@rm -rf $(OBJS)
+	@echo "objets removed"
 
 fclean: clean
-	rm -rf $(NAME)
+	@rm -rf $(NAME)
+	@echo "libft.a removed"
 
 re: fclean all
