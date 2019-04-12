@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 15:00:57 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/11 15:43:20 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/12 11:32:47 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 int		*ft_sort_int_tab(int *tab, int size)
 {

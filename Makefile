@@ -6,7 +6,7 @@
 #    By: sgury <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/05 11:27:10 by sgury             #+#    #+#              #
-#    Updated: 2019/04/11 15:33:04 by sgury            ###   ########.fr        #
+#    Updated: 2019/04/11 18:58:58 by sgury            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,3 +53,5 @@ fclean: clean
 	@echo "libft.a removed"
 
 re: fclean all
+
+.PHONY:  re fclean all clean

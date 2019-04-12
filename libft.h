@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 15:48:15 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/11 15:34:05 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/12 11:56:54 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# define INT_MIN -2147483648
 
 typedef struct		s_list
 {
@@ -85,4 +86,5 @@ void				ft_put_wrd_tab(char **tab, char *separator);
 void				ft_put_int_tab(int *tab, int size, char *separator);
 char				**ft_sort_wrd_tab(char **tab);
 int					*ft_sort_int_tab(int *tab, int size);
+
 #endif

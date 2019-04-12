@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 08:47:04 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/11 10:39:25 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/12 12:00:48 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
+	if (!lst && !f)
+		return ;
 	while (lst)
 	{
 		(f(lst));

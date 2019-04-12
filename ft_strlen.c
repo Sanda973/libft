@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 14:27:09 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/10 08:41:50 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/12 11:38:42 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 size_t	ft_strlen(const char *s)
 {

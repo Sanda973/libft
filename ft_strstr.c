@@ -6,11 +6,9 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/04 14:46:08 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/10 08:23:25 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/12 11:47:02 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 char	*ft_strstr(const char *haystack, const char *needle)
 {

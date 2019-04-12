@@ -6,11 +6,11 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 18:15:03 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/10 08:39:39 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/12 11:14:26 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {
