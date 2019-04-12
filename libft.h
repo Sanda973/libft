@@ -6,7 +6,7 @@
 /*   By: sgury <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/02 15:48:15 by sgury             #+#    #+#             */
-/*   Updated: 2019/04/12 11:56:54 by sgury            ###   ########.fr       */
+/*   Updated: 2019/04/12 18:24:24 by sgury            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <string.h>
-# define INT_MIN -2147483648
 
 typedef struct		s_list
 {
